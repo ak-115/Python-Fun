@@ -1,19 +1,8 @@
 import pyfiglet
 import os
-import time
 
-
-End = '\33[0m'
-Red = '\33[31m'
-Green = '\33[32m'
-Yellow = '\33[33m'
-Blue = '\33[34m'
-Violet = '\33[35m'
-Beige = '\33[34m'
-White = '\33[37m'
-Black = '\33[30m'
-
-print(Green)
+# Colours = [Red, Green, Yellow, Blue, Violet, White, Black]
+Colours = ['\33[31m', '\33[32m', '\33[33m', '\33[34m', '\33[35m', '\33[37', '\33[30m']
 text = str(input('Enter the text:'))
 figlet = pyfiglet.figlet_format((text))
 
@@ -26,31 +15,13 @@ def screen_clear():
 screen_clear()
 
 def blinky_figlet():
-
-    while True:
-        print(figlet)
-        screen_clear()
-        print(Red)
-        print(figlet)
-        screen_clear()
-        print(Green)
-        print(figlet)
-        screen_clear()
-        print(Yellow)
-        print(figlet)
-        screen_clear()
-        print(Blue)
-        print(figlet)
-        screen_clear()
-        print(Violet)
-        print(figlet)
-        screen_clear()
-        print(Beige)
-        print(figlet)
-        screen_clear()
-        print(White)
-        print(figlet)
-        screen_clear()
-        print(Black)
+   while True:
+      X = 0
+      while True:
+          if X <= 6:
+             print(Colours[X] + figlet)
+             X = X + 1
+             screen_clear()
+          else: break
 
 blinky_figlet()
